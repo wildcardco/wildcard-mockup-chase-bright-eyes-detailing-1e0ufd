@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bright Eyes Detailing — Murphysboro, IL | Interior & Exterior Auto Detailing</title>
+<meta name="description" content="Owner-operated car detailing in Murphysboro, IL. Interior deep-cleans, paint correction, headlight restoration and high-gloss finish work. Call or text (618) 559-9434 to book.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0c0c0d;
+  --char:#161719;
+  --char2:#1f2124;
+  --line:#2c2e32;
+  --paper:#e9e6df;
+  --mute:#a9a69f;
+  --glow:#ffc95e;
+  --glow2:#fff3d6;
+  --condensed:"Oswald",sans-serif;
+  --body:"Karla",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--body);
+  font-size:1.05rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--glow);color:var(--ink)}
+img,svg{display:block;max-width:100%}
+a{color:var(--glow);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--condensed);text-transform:uppercase;line-height:1.02;letter-spacing:.01em;font-weight:600}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:absolute;inset:0 0 auto 0;z-index:20;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem 4vw;
+}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--condensed);font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper)}
+.brand:hover{text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.topbar .call{
+  font-family:var(--condensed);letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;
+  border:1px solid rgba(255,201,94,.55);color:var(--glow);
+  padding:.5rem .95rem;border-radius:99px;backdrop-filter:blur(3px);
+  transition:background .25s,color .25s;
+}
+.topbar .call:hover{background:var(--glow);color:var(--ink);text-decoration:none}
+
+/* ---------- hero compare slider ---------- */
+.hero{position:relative}
+.compare{
+  --pos:56%;
+  position:relative;height:min(94svh,860px);min-height:560px;
+  overflow:hidden;isolation:isolate;
+}
+.pane{position:absolute;inset:0}
+.pane svg{width:100%;height:100%}
+.pane.after{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.tag{
+  position:absolute;top:5.4rem;font-family:var(--condensed);font-size:.78rem;
+  letter-spacing:.32em;text-transform:uppercase;padding:.35rem .8rem .3rem;
+}
+.before .tag{left:4vw;color:#8b8b8b;border:1px solid #3a3a3a;background:rgba(12,12,13,.4)}
+.after .tag{right:4vw;color:var(--ink);background:var(--glow)}
+.handle{
+  position:absolute;top:0;bottom:0;left:var(--pos);width:2px;
+  background:linear-gradient(var(--glow2),var(--glow) 40%,rgba(255,201,94,.15));
+  transform:translateX(-1px);pointer-events:none;z-index:5;
+  box-shadow:0 0 24px rgba(255,201,94,.55);
+}
+.handle::after{
+  content:"◂ drag ▸";
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  background:var(--ink);border:1px solid var(--glow);color:var(--glow);
+  font-family:var(--condensed);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  white-space:nowrap;padding:.55rem .8rem .5rem;border-radius:99px;
+}
+.compare input[type=range]{
+  position:absolute;inset:0;width:100%;height:100%;z-index:6;
+  opacity:0;cursor:ew-resize;margin:0;-webkit-appearance:none;appearance:none;touch-action:pan-y;
+}
+.compare input[type=range]:focus-visible ~ .handle::after{outline:2px solid var(--glow2);outline-offset:3px}
+
+.hero-copy{
+  position:absolute;left:0;right:0;bottom:0;z-index:7;pointer-events:none;
+  padding:0 4vw 2.4rem;
+  background:linear-gradient(transparent,rgba(12,12,13,.88) 62%);
+  padding-top:7rem;
+}
+.hero-copy h1{
+  font-size:clamp(2.9rem,9.5vw,7.2rem);font-weight:700;color:var(--paper);
+  max-width:12ch;
+}
+.hero-copy h1 em{font-style:normal;color:var(--glow);text-shadow:0 0 34px rgba(255,201,94,.4)}
+.hero-copy p{max-width:44ch;color:var(--mute);margin:.9rem 0 1.4rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;pointer-events:auto}
+.btn{
+  display:inline-block;font-family:var(--condensed);text-transform:uppercase;letter-spacing:.12em;
+  font-size:.95rem;padding:.9rem 1.6rem .8rem;border-radius:2px;transition:transform .2s,box-shadow .25s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn.solid{background:var(--glow);color:var(--ink);box-shadow:0 0 0 rgba(255,201,94,0)}
+.btn.solid:hover{box-shadow:0 8px 32px rgba(255,201,94,.35)}
+.btn.ghost{border:1px solid var(--line);color:var(--paper)}
+.btn.ghost:hover{border-color:var(--glow);color:var(--glow)}
+
+/* ---------- marquee ---------- */
+.ticker{border-block:1px solid var(--line);background:var(--char);overflow:hidden;padding:.85rem 0}
+.ticker .track{display:flex;gap:3rem;width:max-content;animation:slide 30s linear infinite}
+.ticker span{
+  font-family:var(--condensed);text-transform:uppercase;letter-spacing:.22em;font-size:.82rem;
+  color:var(--mute);white-space:nowrap;display:flex;align-items:center;gap:3rem;
+}
+.ticker i{color:var(--glow);font-style:normal}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:1}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{animation:rise both;animation-timeline:view();animation-range:entry 0% entry 42%}
+    @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  }
+}
+
+/* ---------- sections ---------- */
+section{padding:5.5rem 0}
+.kicker{
+  font-family:var(--condensed);font-size:.78rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--glow);display:flex;align-items:center;gap:.9rem;margin-bottom:1.2rem;
+}
+.kicker::before{content:"";width:2.4rem;height:1px;background:var(--glow)}
+h2{font-size:clamp(2.1rem,5.5vw,3.6rem);color:var(--paper);margin-bottom:1.1rem}
+
+/* about — asymmetric split */
+.about-grid{display:grid;gap:2.5rem}
+.about-grid p{color:var(--mute);max-width:56ch}
+.about-grid p strong{color:var(--paper);font-weight:700}
+.rating-block{
+  border:1px solid var(--line);background:var(--char);padding:1.8rem;
+  display:flex;flex-direction:column;gap:.4rem;position:relative;overflow:hidden;
+}
+.rating-block::before{
+  content:"";position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,201,94,.22),transparent 70%);
+}
+.rating-num{font-family:var(--condensed);font-size:4.2rem;font-weight:700;color:var(--glow);line-height:1}
+.stars{color:var(--glow);letter-spacing:.25em;font-size:1.1rem}
+.rating-block small{color:var(--mute);font-size:.88rem;max-width:30ch}
+
+/* services — numbered ledger rows */
+#services{background:var(--char);border-block:1px solid var(--line)}
+.svc{list-style:none}
+.svc li{border-bottom:1px solid var(--line)}
+.svc li:first-child{border-top:1px solid var(--line)}
+.svc .row{
+  display:grid;grid-template-columns:auto 1fr;gap:1rem 1.4rem;align-items:baseline;
+  padding:1.5rem .4rem;transition:background .25s,padding-left .25s;
+}
+.svc .row:hover{background:rgba(255,201,94,.05);padding-left:1rem}
+.svc .num{font-family:var(--condensed);color:var(--glow);font-size:.9rem;letter-spacing:.15em}
+.svc h3{font-size:clamp(1.3rem,3.4vw,1.9rem);color:var(--paper)}
+.svc p{grid-column:2;color:var(--mute);font-size:.98rem;max-width:60ch}
+.svc .pill{
+  grid-column:2;justify-self:start;margin-top:.4rem;
+  font-family:var(--condensed);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--glow);border:1px solid rgba(255,201,94,.4);padding:.3rem .7rem .25rem;border-radius:99px;
+}
+.svc-note{margin-top:2rem;color:var(--mute);font-size:.95rem;max-width:60ch}
+.svc-note b{color:var(--paper)}
+
+/* why local — offset cards */
+.why-grid{display:grid;gap:1.2rem;margin-top:2.2rem}
+.why{
+  border:1px solid var(--line);padding:1.7rem;background:var(--char);
+  position:relative;transition:border-color .25s,transform .25s;
+}
+.why:hover{border-color:rgba(255,201,94,.5);transform:translateY(-3px)}
+.why h3{font-size:1.25rem;margin-bottom:.5rem;color:var(--glow)}
+.why p{color:var(--mute);font-size:.97rem}
+
+/* beam divider */
+.beam{height:110px;position:relative;overflow:hidden}
+.beam svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* contact */
+#book{background:
+  radial-gradient(ellipse 70% 90% at 20% 110%,rgba(255,201,94,.14),transparent 60%),
+  var(--ink);
+}
+.contact-grid{display:grid;gap:2.5rem}
+.bigphone{
+  font-family:var(--condensed);font-weight:700;font-size:clamp(2.2rem,8vw,4.6rem);
+  color:var(--paper);line-height:1;display:inline-block;margin:.4rem 0 .8rem;
+}
+.bigphone:hover{color:var(--glow);text-decoration:none;text-shadow:0 0 40px rgba(255,201,94,.45)}
+address{font-style:normal;color:var(--mute);line-height:1.8}
+address b{color:var(--paper)}
+.hours-note{color:var(--mute);font-size:.95rem;max-width:44ch;margin-top:1rem}
+.steps{list-style:none;counter-reset:s;display:grid;gap:1rem}
+.steps li{
+  counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;
+  border-left:2px solid var(--line);padding-left:1.1rem;
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);font-family:var(--condensed);color:var(--glow);
+  font-size:1.1rem;padding-top:.15rem;
+}
+.steps b{color:var(--paper);display:block;font-family:var(--condensed);text-transform:uppercase;letter-spacing:.08em;font-size:1.05rem}
+.steps span{color:var(--mute);font-size:.96rem}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:2.2rem 0 2.6rem;background:var(--char)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;color:var(--mute);font-size:.85rem}
+footer a{color:var(--mute)}
+footer a:hover{color:var(--glow)}
+
+@media (min-width:760px){
+  .about-grid{grid-template-columns:1.5fr 1fr;align-items:start}
+  .rating-block{transform:translateY(2.2rem)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why:nth-child(2){transform:translateY(1.4rem)}
+  .why:nth-child(2):hover{transform:translateY(calc(1.4rem - 3px))}
+  .why:nth-child(4){transform:translateY(1.4rem)}
+  .why:nth-child(4):hover{transform:translateY(calc(1.4rem - 3px))}
+  .contact-grid{grid-template-columns:1.2fr 1fr;align-items:center}
+  .svc .row{grid-template-columns:5rem 1fr;padding:1.9rem .6rem}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Bright Eyes Detailing home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="#ffc95e" stroke-width="2"/><circle cx="20" cy="20" r="7" fill="#ffc95e"/><path d="M20 3v6M20 31v6M3 20h6M31 20h6" stroke="#ffc95e" stroke-width="2"/></svg>
+    Bright Eyes
+  </a>
+  <a class="call" href="tel:+16185599434">Call · (618) 559-9434</a>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO: the before/after IS the site ============ -->
+<section class="hero" aria-label="Before and after comparison">
+  <div class="compare" id="cmp" style="--pos:56%">
+
+    <!-- BEFORE: fogged, dull hood + hazy headlight -->
+    <div class="pane before" aria-hidden="true">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="dullhood" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3a3b3c"/><stop offset=".55" stop-color="#2b2c2d"/><stop offset="1" stop-color="#1c1d1e"/>
+          </linearGradient>
+          <radialGradient id="hazylight" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#6e6a5f" stop-opacity=".9"/><stop offset=".5" stop-color="#55524b" stop-opacity=".5"/><stop offset="1" stop-color="#55524b" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+        </defs>
+        <rect width="1440" height="900" fill="#232425"/>
+        <path d="M0 900 L0 460 Q720 320 1440 460 L1440 900 Z" fill="url(#dullhood)"/>
+        <path d="M0 460 Q720 320 1440 460" fill="none" stroke="#454647" stroke-width="3"/>
+        <!-- fogged headlight -->
+        <ellipse cx="1080" cy="560" rx="200" ry="120" fill="url(#hazylight)"/>
+        <ellipse cx="1080" cy="560" rx="120" ry="70" fill="#4c4a43" opacity=".7"/>
+        <ellipse cx="1080" cy="560" rx="120" ry="70" fill="none" stroke="#5c5a52" stroke-width="4"/>
+        <!-- swirl marks -->
+        <g stroke="#4a4b4c" stroke-width="2" fill="none" opacity=".6">
+          <path d="M180 620 q120 -50 260 -10"/><path d="M240 720 q160 -60 320 -20"/><path d="M520 560 q100 -35 220 -5"/><path d="M420 800 q180 -60 360 -15"/>
+        </g>
+        <rect width="1440" height="900" filter="url(#grain)" opacity=".5"/>
+      </svg>
+      <span class="tag">Before</span>
+    </div>
+
+    <!-- AFTER: mirror-black hood + glowing headlight -->
+    <div class="pane after" aria-hidden="true">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="glosshood" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#26282c"/><stop offset=".35" stop-color="#101114"/><stop offset="1" stop-color="#050506"/>
+          </linearGradient>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#191b1f"/><stop offset="1" stop-color="#0d0e10"/>
+          </linearGradient>
+          <radialGradient id="beam" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#fff6dd"/><stop offset=".35" stop-color="#ffc95e" stop-opacity=".85"/><stop offset="1" stop-color="#ffc95e" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fdf6e6" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="900" fill="url(#sky)"/>
+        <path d="M0 900 L0 460 Q720 320 1440 460 L1440 900 Z" fill="url(#glosshood)"/>
+        <path d="M0 460 Q720 320 1440 460" fill="none" stroke="#3b3f46" stroke-width="3"/>
+        <!-- specular reflections on paint -->
+        <path d="M60 640 q300 -110 620 -60 l-30 40 q-300 -45 -570 55 Z" fill="url(#streak)" opacity=".5"/>
+        <path d="M260 790 q360 -120 720 -55 l-24 34 q-350 -60 -676 50 Z" fill="url(#streak)" opacity=".3"/>
+        <!-- bright headlight -->
+        <ellipse cx="1080" cy="560" rx="300" ry="185" fill="url(#beam)"/>
+        <ellipse cx="1080" cy="560" rx="120" ry="70" fill="#0b0c0d"/>
+        <ellipse cx="1080" cy="560" rx="120" ry="70" fill="none" stroke="#ffc95e" stroke-width="5"/>
+        <ellipse cx="1080" cy="560" rx="62" ry="36" fill="#fff3d6"/>
+        <ellipse cx="1055" cy="545" rx="18" ry="10" fill="#ffffff"/>
+        <!-- sparkles -->
+        <g fill="#fff3d6"><path d="M420 500 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6 Z"/><path d="M780 430 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4 Z" opacity=".8"/><path d="M1280 420 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 Z" opacity=".9"/></g>
+      </svg>
+      <span class="tag">After</span>
+    </div>
+
+    <input type="range" min="2" max="98" value="56" step="0.5"
+      aria-label="Drag to compare the car before and after detailing"
+      oninput="document.getElementById('cmp').style.setProperty('--pos', this.value + '%')">
+    <div class="handle"></div>
+
+    <div class="hero-copy">
+      <h1>Your car's eyes, <em>bright again.</em></h1>
+      <p>Owner-operated detailing on Walnut Street in Murphysboro. Drag the line and see what a real hands-on detail does — then let's do it to yours.</p>
+      <div class="hero-cta">
+        <a class="btn solid" href="sms:+16185599434">Text to Book a Detail</a>
+        <a class="btn ghost" href="tel:+16185599434">Or Call (618) 559-9434</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ticker ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Interior Detailing <i>✦</i> Wash &amp; Wax <i>✦</i> Paint Correction <i>✦</i> Headlight Restoration <i>✦</i> Engine Bay Cleaning <i>✦</i> Mobile or In-Shop <i>✦</i> Murphysboro, IL <i>✦</i></span>
+    <span>Interior Detailing <i>✦</i> Wash &amp; Wax <i>✦</i> Paint Correction <i>✦</i> Headlight Restoration <i>✦</i> Engine Bay Cleaning <i>✦</i> Mobile or In-Shop <i>✦</i> Murphysboro, IL <i>✦</i></span>
+  </div>
+</div>
+
+<!-- ============ about ============ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <p class="kicker">Who's Behind the Buffer</p>
+      <h2>One owner. One car at a time. Zero shortcuts.</h2>
+      <p>Bright Eyes Detailing isn't a franchise with a hose and a hurry. It's a small, owner-operated shop in Murphysboro where <strong>the person you text is the person detailing your car</strong> — inside the door jambs, under the seats, into the vents.</p>
+      <p style="margin-top:1rem">Most folks around Jackson County figured a showroom-fresh detail meant a drive to Carbondale or beyond. It doesn't. Commuter sedans, work trucks, family haulers, a used car you're about to sell — they all leave here looking like they just rolled off the lot, and that's the whole point: it's not just a clean car. <strong>It's being proud of your car again.</strong></p>
+    </div>
+    <div class="rating-block reveal">
+      <span class="rating-num">5.0</span>
+      <span class="stars" aria-label="Five out of five stars">★★★★★</span>
+      <small>Every single review from local customers — five stars. Small towns talk, and we intend to keep it that way.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============ services ============ -->
+<section id="services">
+  <div class="wrap">
+    <p class="kicker">What We Do</p>
+    <h2 style="margin-bottom:2.4rem">The full glow-up, à la carte or all at once</h2>
+    <ul class="svc">
+      <li class="reveal"><div class="row"><span class="num">01</span><h3>Interior Detailing</h3><p>Meticulous deep-clean: carpets, seats, vents, cupholders, the crumbs from 2019. Kid-proofed, dog-approved, back to that new-car feeling.</p><span class="pill">Our specialty</span></div></li>
+      <li class="reveal"><div class="row"><span class="num">02</span><h3>Exterior Wash &amp; Wax</h3><p>Hand wash, decontamination, and a protective wax that makes sunlight slide off the hood like glass.</p></div></li>
+      <li class="reveal"><div class="row"><span class="num">03</span><h3>Paint Correction &amp; Polishing</h3><p>Swirls, light scratches, and dull oxidized paint machine-polished back to a deep, high-gloss mirror finish.</p><span class="pill">High-gloss finish work</span></div></li>
+      <li class="reveal"><div class="row"><span class="num">04</span><h3>Headlight Restoration</h3><p>The namesake. Fogged, yellowed lenses restored to clear — safer night driving and a face-lift for the whole front end.</p></div></li>
+      <li class="reveal"><div class="row"><span class="num">05</span><h3>Engine Bay Cleaning</h3><p>Degreased and dressed so popping the hood is a pleasure — a big deal if you're selling.</p></div></li>
+      <li class="reveal"><div class="row"><span class="num">06</span><h3>Full Detail Packages — Mobile or In-Shop</h3><p>The works, bundled. Drop it at the shop on Walnut Street, or we come to your driveway anywhere in the Murphysboro / Jackson County area.</p><span class="pill">We come to you</span></div></li>
+    </ul>
+    <p class="svc-note reveal"><b>Selling a vehicle?</b> A full resale-ready detail routinely pays for itself in the asking price. Text a photo of your car and we'll tell you honestly what it needs.</p>
+  </div>
+</section>
+
+<!-- beam divider -->
+<div class="beam" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none">
+    <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffc95e" stop-opacity="0"/><stop offset=".5" stop-color="#ffc95e"/><stop offset="1" stop-color="#ffc95e" stop-opacity="0"/></linearGradient></defs>
+    <path d="M0 60 Q720 20 1440 60" fill="none" stroke="url(#bm)" stroke-width="2"/>
+    <circle cx="720" cy="40" r="5" fill="#fff3d6"/>
+  </svg>
+</div>
+
+<!-- ============ why local ============ -->
+<section id="why">
+  <div class="wrap">
+    <p class="kicker">Why Bright Eyes</p>
+    <h2>Small-town shop.<br>Big-city finish.</h2>
+    <div class="why-grid">
+      <div class="why reveal"><h3>Right Here in Murphysboro</h3><p>Skip the drive to Carbondale or St. Louis. Showroom-level detailing is at 1834 Walnut St — or in your own driveway.</p></div>
+      <div class="why reveal"><h3>You Deal With the Owner</h3><p>Not a chain, not a crew rotating through. One set of careful hands, personally accountable for every panel.</p></div>
+      <div class="why reveal"><h3>Regulars Are the Business</h3><p>Repeat customers and neighbors keep the lights on here. We treat every car like your neighbor will ask about it — because they will.</p></div>
+      <div class="why reveal"><h3>Results You Can See</h3><p>No vague promises. Before-and-after transformations like the one at the top of this page — dull to mirror, fogged to bright.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ book ============ -->
+<section id="book">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="kicker">Book Your Detail</p>
+      <h2>Ready to see it shine?</h2>
+      <p style="color:var(--mute)">Call or text — texting works great if you want to send photos of what you're dealing with.</p>
+      <a class="bigphone" href="tel:+16185599434">(618) 559-9434</a>
+      <address>
+        <b>Bright Eyes Detailing</b><br>
+        1834 Walnut St, Murphysboro, IL 62966<br>
+        Serving Murphysboro, Carbondale, and all of Jackson County — mobile details available.
+      </address>
+      <p class="hours-note">Appointment-based so every vehicle gets full, unhurried attention. Reach out and we'll find a time that fits your week.</p>
+      <div class="hero-cta" style="margin-top:1.6rem">
+        <a class="btn solid" href="sms:+16185599434?&body=Hi!%20I'd%20like%20to%20book%20a%20detail.">Text to Book</a>
+        <a class="btn ghost" href="tel:+16185599434">Call Now</a>
+      </div>
+    </div>
+    <ol class="steps reveal">
+      <li><b>Reach out</b><span>Call or text with your vehicle and what's bugging you — hazy headlights, tired paint, a rough interior.</span></li>
+      <li><b>Get a straight answer</b><span>We'll recommend exactly what it needs — nothing it doesn't — and set a time, at the shop or your place.</span></li>
+      <li><b>Drive off proud</b><span>Walk around it once. Then walk around it again. That's the Bright Eyes part.</span></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Bright Eyes Detailing · 1834 Walnut St, Murphysboro, IL 62966 · <a href="tel:+16185599434">(618) 559-9434</a></span>
+    <span>Website sample by Wild Card Creative Co</span>
+  </div>
+</footer>
+
+</body>
+</html>
